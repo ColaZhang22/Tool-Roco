@@ -1,0 +1,169 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "PICK",
+      "description": "Pick up an object if the gripper is empty. Only PICK an object if your gripper is empty. <path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+        "parameters": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "The object to pick up. Decide target ojective (e.g. an object you want to pick) according to your current gripper location."
+          },
+          "path": {
+            "type": "array",
+            "description": "<path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "required": ["object", "path"]
+      }
+    }
+  },
+  {
+  "type": "function",
+  "function": {
+    "name": "MOVE",
+    "description": "Use this function to decompose a difficult path into simple path and give some space for other robotics, especially when pick and place cannot work or solve by IK in historical action. Keep current grasp and inhand state. Move to some place <path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+      "parameters": {
+        "path": {
+          "type": "array",
+          "description": "a series coordication of single paths to avoid some difficult path planning, <path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+          "items": {
+            "type": "array",
+            "items": { "type": "number" }
+          }
+        }
+      },
+      "required": ["path"]
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PLACE",
+      "description": "Place an object at a given location if it is currently in the gripper. Only PLACE mug or cup after it has been PICKed, do not PLACE handles.  Only PLACE object if object's already in your gripper",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "The object to place."
+          },
+          "location": {
+            "type": "array",
+            "description": "<location> is (x,y,z), only PLACE after some objects are PICKed, you cannot PLACE any handles.",
+            "items": { "type": "number" }
+          },
+          "path": {
+            "type": "array",
+            "description": "<path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+          "items": {
+              "type": "array",
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "required": ["object", "location", "path"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OPEN",
+      "description": "Open a door handle after picking it. The path must form a curve pointing away from the cabinet door and move only horizontally. The last coordinate should be the target handle position.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "handle": {
+            "type": "string",
+            "description": "The handle to open."
+          },
+          "path": {
+            "type": "array",
+            "description": "Exactly five coordinates forming a horizontal curved path away from the cabinet door. <path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "required": ["handle", "path"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WAIT",
+      "description": "Keep the robot still at the current position. The path must be a repeated path of the current position (five identical coordinates). Used after opening a door to hold it open.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "array",
+            "description": "keeps the robot still, and PATH is a repeated path of current position. <path> must contain exactly five <coord>s, e.g. PATH [(0.07,0.22,0.33),(0.11,0.22,0.33),(0.28,0.22,0.33),(0.33,0.22,0.33),(0.40,0.22,0.33)]. Plan a list of <coord> that move smoothly from current gripper to the target location.  The <coord>s must be evenly spaced between start and target. 4) Each <coord> must not collide with other robots, and must stay away from table and objects. ",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "required": ["path"]
+      }
+    }
+  },
+  {
+  "type": "function",
+  "function": {
+    "name": "CONNECT_AGENT",
+    "description": "Use this function to share your current objective or needs with one or multiple agents, providing only new and relevant information without repeating what others have already said.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "agent_name": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of agent names you want to tell. You may include one or multiple agents."
+        },
+        "content": {
+          "type": "string",
+          "description": "The content of the current agent speaking."
+        }
+      },
+      "required": ["agent_name", "content"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "DISCONNECT_AGENT",
+      "description": "Use this function to disconnect one or multiple agents from the current session or network. Apply it only when their connection is no longer needed.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_name": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of agent names you want to disconnect. You may include one or multiple agents."
+          },
+          "reason": {
+            "type": "string",
+            "description": "The reason why the disconnection is requested."
+          }
+        },
+        "required": ["agent_name", "reason"]
+      }
+    }
+  }
+]
