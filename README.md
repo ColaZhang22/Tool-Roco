@@ -1,7 +1,14 @@
 # ToolRoco
 
-ToolRoco is a framework designed for collaborative robotic tasks. It supports various task scenarios such as CabinetTask, PackGroceryTask, and SortTask.
+ToolRoco is a long-term tool-using LLM benchmark  designed for collaborative robotic tasks. It supports various task scenarios such as CabinetTask, PackGroceryTask, and SortTask.
+### CabinetTask
+![CabinetTask](./%20Example/CabinetTask.gif)
 
+### PackTask
+![PackTask](./%20Example/PACK.gif)
+
+### SortTask
+![SortTask](./%20Example/SortTask.gif)
 ---
 
 ## Project Structure
@@ -24,11 +31,3 @@ Before running the project, ensure all dependencies are installed. Use the follo
 pip install -r requirements.txt
 
 
-### Animation 1
-![CabinetTask](./%20Example/CabinetTask.gif)
-
-### Animation 2
-![PackTask](./%20Example/PACK.gif)
-
-### Animation 3
-![SortTask](./%20Example/SortTask.gif)
