@@ -56,7 +56,7 @@ class LLMRunner:
         data_dir: str = "data",
         overwrite: bool = False,
         llm_output_mode="action_only", # "action_only" or "action_and_path"
-        llm_comm_mode="chat",
+        llm_comm_mode="centralized", # "centralized" or "auto_organization"
         llm_num_replans=1,
         give_env_feedback=True,
         skip_display=False,
@@ -112,7 +112,8 @@ class LLMRunner:
         self.skip_display = skip_display
         self.split_parsed_plans = split_parsed_plans
         self.temperature = temperature
-        self.model_path = "/home/ningjiahong/project/uav-sp/LLM/DeepSeek-R1-Distill-Qwen-32B"
+        self.model_path = llm_source
+        # self.model_path = "/home/project/LLM/DeepSeek-R1-Distill-Qwen-32B"
         self.device = "auto"
         self.open_model = AutoModelForCausalLM.from_pretrained(self.model_path, dtype=torch.float16, device_map=self.device)
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
@@ -550,6 +551,7 @@ if __name__ == "__main__":
     parser.add_argument("--no_history", "-nh", action="store_true")
     parser.add_argument("--no_feedback", "-nf", action="store_true")
     parser.add_argument("--llm_source", "-llm", type=str, default="gpt-4")
+
     logging.basicConfig(level=logging.INFO)
 
     args = parser.parse_args()
