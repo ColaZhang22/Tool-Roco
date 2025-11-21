@@ -10,14 +10,21 @@ ToolRoCo treats all agents as tools and aims to explore the **self-organization 
 - **Sort**
 
 The following is a demo obtained from experiments conducted with **GPT-5**.
-### <center>CabinetTask</center>
-![CabinetTask](./%20Example/CabinetTask.gif)
+<p align="center"><b>CabinetTask</b></p>
+<p align="center">
+  <img src="./%20Example/CabinetTask.gif" alt="CabinetTask" width="300">
+</p>
 
-### <center>PackTask</center>
-![PackTask](./%20Example/PACK.gif)
+<p align="center"><b>PackTask</b></p>
+<p align="center">
+  <img src="./%20Example/PACK.gif" alt="PackTask" width="300">
+</p>
 
-### <center>SortTask</center>
-![SortTask](./%20Example/SortTask.gif)
+<p align="center"><b>SortTask</b></p>
+<p align="center">
+  <img src="./%20Example/SortTask.gif" alt="SortTask" width="300">
+</p>
+
 ---
 
 ## Cooperative Paradigm
