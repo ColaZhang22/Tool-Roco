@@ -12,27 +12,45 @@ ToolRoCo treats all agents as tools and aims to explore the **self-organization 
 The following is a demo obtained from experiments conducted with **GPT-5**.
 <p align="center"><b>CabinetTask</b></p>
 <p align="center">
-  <img src="./%20Example/CabinetTask.gif" alt="CabinetTask" width="300">
+  <img src="./%20Example/CabinetTask.gif" alt="CabinetTask" width="100%">
 </p>
 
 <p align="center"><b>PackTask</b></p>
 <p align="center">
-  <img src="./%20Example/PACK.gif" alt="PackTask" width="300">
+  <img src="./%20Example/PACK.gif" alt="PackTask" width="100%">
 </p>
 
 <p align="center"><b>SortTask</b></p>
 <p align="center">
-  <img src="./%20Example/SortTask.gif" alt="SortTask" width="300">
+  <img src="./%20Example/SortTask.gif" alt="SortTask" width="100%">
 </p>
 
 ---
 
 ## Cooperative Paradigm
-ToolRoCo provides four cooperation paradigms:
-| Cooperation Paradigm | Centralized LLM           | Decentralized LLMs       |
-|:------------------:|:------------------------:|:-----------------------:|
-| **Agent-not-as-Tool** | Centralized             | Decentralized           |
-| **Agent-as-Tool**     | Centralized Self-organization | Self-organization       |
+<p>ToolRoCo provides four cooperation paradigms:</p>
+
+<table style="width:100%; border-collapse: collapse; text-align:center;">
+  <thead>
+    <tr>
+      <th>Cooperation Paradigm</th>
+      <th>Centralized LLM</th>
+      <th>Decentralized LLMs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Agent-not-as-Tool</b></td>
+      <td>Centralized</td>
+      <td>Decentralized</td>
+    </tr>
+    <tr>
+      <td><b>Agent-as-Tool</b></td>
+      <td>Centralized Self-organization</td>
+      <td>Self-organization</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 ## Tools and Prompt of ToolRoCo
