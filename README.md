@@ -1,6 +1,6 @@
-<div align="center">
+<!-- <div align="center">
   <img src="https://raw.githubusercontent.com/ColaZhang22/Tool-Roco/main/Example/1762318662478.jpeg", width="100%">
-</div>
+</div> -->
 
 # ToolRoCo
 
