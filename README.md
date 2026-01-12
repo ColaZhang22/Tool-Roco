@@ -8,7 +8,7 @@
 **ToolRoCo** is a multi-turn, tool-using LLM benchmark designed for collaborative robotic tasks, based on **RoCo**  
 <https://github.com/MandiZhao/robot-collab>.
 
-ToolRoCo treats all agents as tools and aims to explore the **self-organization ability** of LLM agents. Currently, ToolRoCo supports both **open-source** and **closed-source** models, and includes three collaborative tasks:
+ToolRoCo treats all agents as tools and aims to explore **emergent coordination** and **autonomous team formation**. Currently, ToolRoCo supports both **open-source** and **closed-source** models, and includes three collaborative tasks:
 
 - **Cabinet**  
 - **PackGrocery**  
@@ -46,13 +46,13 @@ The following is a demo obtained from experiments conducted with **GPT-5**.
   <tbody>
     <tr>
       <td><b>Agent-not-as-Tool</b></td>
-      <td>Centralized</td>
-      <td>Decentralized</td>
+      <td>Static Centralized Cooperation</td>
+      <td>Decentralized Fixed Teaming</td>
     </tr>
     <tr>
       <td><b>Agent-as-Tool</b></td>
-      <td>Centralized Self-organization</td>
-      <td>Self-organization</td>
+      <td>Dynamic Centralized Orchestration</td>
+      <td>Emergent Coalition Formation</td>
     </tr>
   </tbody>
 </table>
