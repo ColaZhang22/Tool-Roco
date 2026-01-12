@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./ Example/1762318662478.jpeg" width="100%">
+  <img src="./Example/1762318662478.jpeg" width="100%">
 </div>
 
 # ToolRoCo
@@ -17,17 +17,17 @@ ToolRoCo treats all agents as tools and aims to explore the **self-organization 
 The following is a demo obtained from experiments conducted with **GPT-5**.
 <p align="center"><b>CabinetTask</b></p>
 <p align="center">
-  <img src="./%20Example/CabinetTask.gif" alt="CabinetTask" width="100%">
+  <img src="./Example/CabinetTask.gif" alt="CabinetTask" width="100%">
 </p>
 
 <p align="center"><b>PackTask</b></p>
 <p align="center">
-  <img src="./%20Example/PACK.gif" alt="PackTask" width="100%">
+  <img src="./Example/PACK.gif" alt="PackTask" width="100%">
 </p>
 
 <p align="center"><b>SortTask</b></p>
 <p align="center">
-  <img src="./%20Example/SortTask.gif" alt="SortTask" width="100%">
+  <img src="./Example/SortTask.gif" alt="SortTask" width="100%">
 </p>
 
 ---
@@ -57,7 +57,7 @@ The following is a demo obtained from experiments conducted with **GPT-5**.
   </tbody>
 </table>
 <div align="center">
-  <img src="./ Example/Introduction.png" width="100%">
+  <img src="./Example/Introduction.png" width="100%">
 </div>
 
 ---
